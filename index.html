@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Code 2</title>
+</head>
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn{
+        margin-top: 1rem;
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+</style>
+<body>
+    <div class="input-container">
+    <label for="text">Enter a text</label>
+    <input type="text" value=""id="text">
+</div>
+<div class="btn-container">
+    <button class="btn" id="increase">+</button>
+    <button class="btn" id="decrease">-</button>
+</div>
+
+    <script>
+        const inputEl = document.getElementById("text");
+        const increaseEl = document.getElementById("increase");
+        const decreaseEl = document.getElementById("decrease");
+        
+        let font = 15;
+
+        function increaseFunc(){
+            font +=2;
+            inputEl.style.fontSize= `${font}px`;
+        }
+
+        function decreaseFunc(){
+            font -=2;
+            inputEl.style.fontSize= `${font}px`;
+        }
+
+        increaseEl.addEventListener("click", increaseFunc);
+        decreaseEl.addEventListener("click", decreaseFunc);
+    </script>
+</body>
+</html>
